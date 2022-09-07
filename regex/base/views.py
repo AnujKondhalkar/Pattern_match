@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import re
 
 
 def home(request):
@@ -10,6 +11,10 @@ def check(request):
 
     str_in = request.GET['string']
     pattern_in = request.GET['pattern']
-    result = str_in + pattern_in
+
+    if re.search(pattern_in, str_in):
+        result = 'Yes'
+    else:
+        result = 'No'
 
     return render(request, 'base/output.html', {'Result': result})
