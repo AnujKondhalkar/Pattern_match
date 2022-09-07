@@ -1,6 +1,7 @@
 from django.urls import path
-from .import views
+from . import views
 
 urlpatterns = [
-    path('', views.regex, name='task_regex'),
+    path('', views.home, name='home'),
+    path('check', views.check, name='check'),
 ]

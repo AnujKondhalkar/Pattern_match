@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <form action="check">
+        {% csrf_token %}
+
+        Enter String = <input type="text" name="string"><br>
+        Enter Pattern = <input type="text" name="pattern"><br>
+        <input type="submit">
+    </form>
+
+{% endblock %}
